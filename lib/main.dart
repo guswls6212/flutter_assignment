@@ -75,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   void initState() {
+    // add observer
     WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
@@ -86,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   dispose() {
+    // remove observer
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -211,6 +213,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    print('build() MyHomePageState');
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final PreferredSizeWidget appBar = _buildAppBar();
